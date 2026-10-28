@@ -1,0 +1,151 @@
+{
+  "units": "mm",
+  "configuration": {
+    "working_width": 74.0,
+    "roller_radius": 6.0,
+    "roller_spacing": 20.0,
+    "axis_height": 23.0,
+    "shaft_radius": 2.0,
+    "bearing_clearance": 0.25,
+    "apron_thickness": 0.5,
+    "apron_clearance": 0.1
+  },
+  "parts": {
+    "base": {
+      "volume_mm3": 37440.0,
+      "bounds_mm": [
+        104.0,
+        60.0,
+        6.0
+      ]
+    },
+    "left_cheek": {
+      "volume_mm3": 4950.574123147209,
+      "bounds_mm": [
+        4.0,
+        44.0,
+        30.0
+      ]
+    },
+    "right_cheek": {
+      "volume_mm3": 4950.574123147209,
+      "bounds_mm": [
+        4.0,
+        44.0,
+        30.0
+      ]
+    },
+    "drive_drum": {
+      "volume_mm3": 7432.17209667641,
+      "bounds_mm": [
+        74.00000020000002,
+        12.0,
+        12.0
+      ]
+    },
+    "drive_shaft": {
+      "volume_mm3": 1426.6410654957215,
+      "bounds_mm": [
+        114.0000001,
+        4.0000002,
+        7.500000200000002
+      ]
+    },
+    "follower_drum": {
+      "volume_mm3": 7439.29140370063,
+      "bounds_mm": [
+        74.0,
+        12.0,
+        12.0
+      ]
+    },
+    "follower_shaft": {
+      "volume_mm3": 1357.1680263507906,
+      "bounds_mm": [
+        108.0,
+        4.0,
+        4.0
+      ]
+    },
+    "left_swing_arm": {
+      "volume_mm3": 356.91371367968,
+      "bounds_mm": [
+        2.0,
+        28.0,
+        8.0
+      ]
+    },
+    "right_swing_arm": {
+      "volume_mm3": 356.91371367968,
+      "bounds_mm": [
+        2.0,
+        28.0,
+        8.0
+      ]
+    },
+    "left_drive_collar": {
+      "volume_mm3": 38.87720908817371,
+      "bounds_mm": [
+        1.500000000000007,
+        7.0,
+        7.0
+      ]
+    },
+    "left_follower_collar": {
+      "volume_mm3": 38.8772090881737,
+      "bounds_mm": [
+        1.500000000000007,
+        7.0,
+        7.0
+      ]
+    },
+    "right_drive_collar": {
+      "volume_mm3": 38.8772090881737,
+      "bounds_mm": [
+        1.5,
+        7.0,
+        7.0
+      ]
+    },
+    "right_follower_collar": {
+      "volume_mm3": 38.8772090881737,
+      "bounds_mm": [
+        1.5,
+        7.0,
+        7.0
+      ]
+    },
+    "handwheel": {
+      "volume_mm3": 3158.1083427847616,
+      "bounds_mm": [
+        4.0,
+        32.0,
+        32.0
+      ]
+    },
+    "crank_pin": {
+      "volume_mm3": 98.96016858807852,
+      "bounds_mm": [
+        14.0,
+        3.0,
+        3.0
+      ]
+    },
+    "crank_grip": {
+      "volume_mm3": 172.75618002090272,
+      "bounds_mm": [
+        9.0,
+        6.0,
+        6.0
+      ]
+    },
+    "flexible_apron": {
+      "volume_mm3": 2956.2343879218456,
+      "bounds_mm": [
+        74.0,
+        33.2,
+        13.200000000000003
+      ]
+    }
+  }
+}

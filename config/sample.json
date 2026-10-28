@@ -1,0 +1,10 @@
+{
+  "working_width": 74.0,
+  "roller_radius": 6.0,
+  "roller_spacing": 20.0,
+  "axis_height": 23.0,
+  "shaft_radius": 2.0,
+  "bearing_clearance": 0.25,
+  "apron_thickness": 0.5,
+  "apron_clearance": 0.1
+}
