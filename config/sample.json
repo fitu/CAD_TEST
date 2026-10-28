@@ -1,10 +1,15 @@
 {
   "working_width": 74.0,
-  "roller_radius": 6.0,
-  "roller_spacing": 20.0,
-  "axis_height": 23.0,
-  "shaft_radius": 2.0,
-  "bearing_clearance": 0.25,
+  "roller_radius": 8.0,
+  "roller_spacing": 24.0,
+  "axis_height": 32.0,
+  "shaft_radius": 3.0,
+  "shaft_flat_depth": 0.5,
+  "keyed_clearance": 0.25,
+  "bearing_clearance": 0.3,
+  "loading_travel": 12.0,
   "apron_thickness": 0.5,
-  "apron_clearance": 0.1
+  "apron_clearance": 0.1,
+  "apron_seam_overlap": 8.0,
+  "apron_open_slack": 12.0
 }

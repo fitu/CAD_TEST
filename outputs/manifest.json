@@ -1,151 +1,637 @@
 {
+  "revision": 2,
   "units": "mm",
   "configuration": {
     "working_width": 74.0,
-    "roller_radius": 6.0,
-    "roller_spacing": 20.0,
-    "axis_height": 23.0,
-    "shaft_radius": 2.0,
-    "bearing_clearance": 0.25,
+    "roller_radius": 8.0,
+    "roller_spacing": 24.0,
+    "axis_height": 32.0,
+    "shaft_radius": 3.0,
+    "shaft_flat_depth": 0.5,
+    "keyed_clearance": 0.25,
+    "bearing_clearance": 0.3,
+    "loading_travel": 12.0,
     "apron_thickness": 0.5,
-    "apron_clearance": 0.1
+    "apron_clearance": 0.1,
+    "apron_seam_overlap": 8.0,
+    "apron_open_slack": 12.0
+  },
+  "apron": {
+    "width_mm": 73.0,
+    "loop_length_mm": 136.46459731494954,
+    "seam_overlap_mm": 8.0,
+    "cut_length_mm": 144.46459731494954,
+    "open_slack_mm": 12.0,
+    "closed_slack_mm": 36.0
   },
   "parts": {
-    "base": {
-      "volume_mm3": 37440.0,
+    "hw_left_front_M3x40_bolt": {
+      "category": "hardware",
+      "in_assembly": true,
+      "volume_mm3": 354.0182221513997,
       "bounds_mm": [
-        104.0,
-        60.0,
-        6.0
-      ]
+        5.5,
+        5.5,
+        43.0
+      ],
+      "stl_bounds_mm": [
+        5.501709698995512,
+        5.500000200000002,
+        43.00132117649653
+      ],
+      "stl_path": "stl/hardware/hw_left_front_M3x40_bolt.stl"
     },
-    "left_cheek": {
-      "volume_mm3": 4950.574123147209,
+    "hw_left_front_M3_nut": {
+      "category": "hardware",
+      "in_assembly": true,
+      "volume_mm3": 45.90884398536531,
       "bounds_mm": [
-        4.0,
-        44.0,
-        30.0
-      ]
+        6.350852961085877,
+        5.5000000000000036,
+        2.4
+      ],
+      "stl_bounds_mm": [
+        6.350853161085882,
+        5.500000200000005,
+        2.4009326539975526
+      ],
+      "stl_path": "stl/hardware/hw_left_front_M3_nut.stl"
     },
-    "right_cheek": {
-      "volume_mm3": 4950.574123147209,
+    "hw_left_rear_M3x40_bolt": {
+      "category": "hardware",
+      "in_assembly": true,
+      "volume_mm3": 354.01822215139975,
       "bounds_mm": [
-        4.0,
-        44.0,
-        30.0
-      ]
+        5.5,
+        5.5,
+        43.0
+      ],
+      "stl_bounds_mm": [
+        5.501709698995512,
+        5.500000200000002,
+        43.00132117649653
+      ],
+      "stl_path": "stl/hardware/hw_left_rear_M3x40_bolt.stl"
+    },
+    "hw_left_rear_M3_nut": {
+      "category": "hardware",
+      "in_assembly": true,
+      "volume_mm3": 45.9088439853653,
+      "bounds_mm": [
+        6.350852961085877,
+        5.5000000000000036,
+        2.4
+      ],
+      "stl_bounds_mm": [
+        6.350853161085882,
+        5.500000200000005,
+        2.4009326539975526
+      ],
+      "stl_path": "stl/hardware/hw_left_rear_M3_nut.stl"
+    },
+    "left_bearing_cap": {
+      "category": "printed",
+      "in_assembly": true,
+      "volume_mm3": 3616.237203717264,
+      "bounds_mm": [
+        8.0,
+        68.0,
+        8.0
+      ],
+      "stl_bounds_mm": [
+        8.002051598794626,
+        68.00000020000004,
+        8.001554289995937
+      ],
+      "stl_path": "stl/left_bearing_cap.stl"
+    },
+    "hw_right_front_M3x40_bolt": {
+      "category": "hardware",
+      "in_assembly": true,
+      "volume_mm3": 354.0182221513997,
+      "bounds_mm": [
+        5.5,
+        5.5,
+        43.0
+      ],
+      "stl_bounds_mm": [
+        5.501709698995512,
+        5.500000200000002,
+        43.00132117649653
+      ],
+      "stl_path": "stl/hardware/hw_right_front_M3x40_bolt.stl"
+    },
+    "hw_right_front_M3_nut": {
+      "category": "hardware",
+      "in_assembly": true,
+      "volume_mm3": 45.90884398536531,
+      "bounds_mm": [
+        6.350852961085877,
+        5.5000000000000036,
+        2.4
+      ],
+      "stl_bounds_mm": [
+        6.350853161085882,
+        5.500000200000005,
+        2.4009326539975526
+      ],
+      "stl_path": "stl/hardware/hw_right_front_M3_nut.stl"
+    },
+    "hw_right_rear_M3x40_bolt": {
+      "category": "hardware",
+      "in_assembly": true,
+      "volume_mm3": 354.01822215139975,
+      "bounds_mm": [
+        5.5,
+        5.5,
+        43.0
+      ],
+      "stl_bounds_mm": [
+        5.501709698995512,
+        5.500000200000002,
+        43.00132117649653
+      ],
+      "stl_path": "stl/hardware/hw_right_rear_M3x40_bolt.stl"
+    },
+    "hw_right_rear_M3_nut": {
+      "category": "hardware",
+      "in_assembly": true,
+      "volume_mm3": 45.9088439853653,
+      "bounds_mm": [
+        6.350852961085877,
+        5.5000000000000036,
+        2.4
+      ],
+      "stl_bounds_mm": [
+        6.350853161085882,
+        5.500000200000005,
+        2.4009326539975526
+      ],
+      "stl_path": "stl/hardware/hw_right_rear_M3_nut.stl"
+    },
+    "right_bearing_cap": {
+      "category": "printed",
+      "in_assembly": true,
+      "volume_mm3": 3616.237203717264,
+      "bounds_mm": [
+        8.0,
+        68.0,
+        8.0
+      ],
+      "stl_bounds_mm": [
+        8.002051598794626,
+        68.00000020000004,
+        8.001554289995937
+      ],
+      "stl_path": "stl/right_bearing_cap.stl"
+    },
+    "frame": {
+      "category": "printed",
+      "in_assembly": true,
+      "volume_mm3": 82289.93096010636,
+      "bounds_mm": [
+        118.0,
+        80.0,
+        32.0
+      ],
+      "stl_bounds_mm": [
+        118.00000020000002,
+        80.00000020000002,
+        32.00102589939734
+      ],
+      "stl_path": "stl/frame.stl"
     },
     "drive_drum": {
-      "volume_mm3": 7432.17209667641,
+      "category": "printed",
+      "in_assembly": true,
+      "volume_mm3": 12509.890919973146,
       "bounds_mm": [
-        74.00000020000002,
-        12.0,
+        74.0,
+        16.0,
+        16.0
+      ],
+      "stl_bounds_mm": [
+        16.000000200000017,
+        16.004973287986942,
+        74.00497328798696
+      ],
+      "stl_path": "stl/drive_drum.stl"
+    },
+    "hw_left_drive_2x12_split_pin": {
+      "category": "hardware",
+      "in_assembly": true,
+      "volume_mm3": 30.2344420035851,
+      "bounds_mm": [
+        1.9000000000000057,
+        1.8999999999999986,
         12.0
-      ]
+      ],
+      "stl_bounds_mm": [
+        1.9005848112428814,
+        1.9005848112428785,
+        12.000584811242877
+      ],
+      "stl_path": "stl/hardware/hw_left_drive_2x12_split_pin.stl"
+    },
+    "hw_right_drive_2x12_split_pin": {
+      "category": "hardware",
+      "in_assembly": true,
+      "volume_mm3": 30.234442003585016,
+      "bounds_mm": [
+        1.9000000000000057,
+        1.8999999999999986,
+        12.0
+      ],
+      "stl_bounds_mm": [
+        1.9005848112428814,
+        1.9005848112428785,
+        12.000584811242877
+      ],
+      "stl_path": "stl/hardware/hw_right_drive_2x12_split_pin.stl"
     },
     "drive_shaft": {
-      "volume_mm3": 1426.6410654957215,
+      "category": "printed",
+      "in_assembly": true,
+      "volume_mm3": 3325.044485635503,
       "bounds_mm": [
-        114.0000001,
-        4.0000002,
-        7.500000200000002
-      ]
+        124.00000019999999,
+        6.000000199999999,
+        5.500000200445221
+      ],
+      "stl_bounds_mm": [
+        124.00184740311434,
+        6.0016797993474436,
+        5.501847403114331
+      ],
+      "stl_path": "stl/drive_shaft.stl"
     },
-    "follower_drum": {
-      "volume_mm3": 7439.29140370063,
+    "left_drive_spacer": {
+      "category": "printed",
+      "in_assembly": true,
+      "volume_mm3": 252.66887235026627,
       "bounds_mm": [
-        74.0,
+        5.700000000000003,
+        10.0,
+        10.0
+      ],
+      "stl_bounds_mm": [
+        10.000000200000004,
+        10.00310837999184,
+        5.703108379991845
+      ],
+      "stl_path": "stl/left_drive_spacer.stl"
+    },
+    "hw_left_drive_M6_washer": {
+      "category": "hardware",
+      "in_assembly": true,
+      "volume_mm3": 78.88539153163971,
+      "bounds_mm": [
+        1.0,
         12.0,
         12.0
-      ]
+      ],
+      "stl_bounds_mm": [
+        1.0037300159902092,
+        12.003730015990211,
+        12.000000200000008
+      ],
+      "stl_path": "stl/hardware/hw_left_drive_M6_washer.stl"
     },
-    "follower_shaft": {
-      "volume_mm3": 1357.1680263507906,
+    "right_drive_spacer": {
+      "category": "printed",
+      "in_assembly": true,
+      "volume_mm3": 252.66887235026633,
       "bounds_mm": [
-        108.0,
-        4.0,
-        4.0
-      ]
+        5.700000000000003,
+        10.0,
+        10.0
+      ],
+      "stl_bounds_mm": [
+        10.000000200000004,
+        10.00310837999184,
+        5.703108379991845
+      ],
+      "stl_path": "stl/right_drive_spacer.stl"
     },
-    "left_swing_arm": {
-      "volume_mm3": 356.91371367968,
+    "hw_right_drive_M6_washer": {
+      "category": "hardware",
+      "in_assembly": true,
+      "volume_mm3": 78.88539153163971,
       "bounds_mm": [
-        2.0,
-        28.0,
-        8.0
-      ]
+        1.0,
+        12.0,
+        12.0
+      ],
+      "stl_bounds_mm": [
+        1.0037300159902092,
+        12.003730015990211,
+        12.000000200000008
+      ],
+      "stl_path": "stl/hardware/hw_right_drive_M6_washer.stl"
     },
-    "right_swing_arm": {
-      "volume_mm3": 356.91371367968,
-      "bounds_mm": [
-        2.0,
-        28.0,
-        8.0
-      ]
-    },
-    "left_drive_collar": {
-      "volume_mm3": 38.87720908817371,
-      "bounds_mm": [
-        1.500000000000007,
-        7.0,
-        7.0
-      ]
-    },
-    "left_follower_collar": {
-      "volume_mm3": 38.8772090881737,
-      "bounds_mm": [
-        1.500000000000007,
-        7.0,
-        7.0
-      ]
-    },
-    "right_drive_collar": {
-      "volume_mm3": 38.8772090881737,
-      "bounds_mm": [
-        1.5,
-        7.0,
-        7.0
-      ]
-    },
-    "right_follower_collar": {
-      "volume_mm3": 38.8772090881737,
-      "bounds_mm": [
-        1.5,
-        7.0,
-        7.0
-      ]
-    },
-    "handwheel": {
-      "volume_mm3": 3158.1083427847616,
-      "bounds_mm": [
-        4.0,
-        32.0,
-        32.0
-      ]
-    },
-    "crank_pin": {
-      "volume_mm3": 98.96016858807852,
-      "bounds_mm": [
-        14.0,
-        3.0,
-        3.0
-      ]
-    },
-    "crank_grip": {
-      "volume_mm3": 172.75618002090272,
-      "bounds_mm": [
-        9.0,
-        6.0,
-        6.0
-      ]
-    },
-    "flexible_apron": {
-      "volume_mm3": 2956.2343879218456,
+    "follower_drum": {
+      "category": "printed",
+      "in_assembly": true,
+      "volume_mm3": 12346.89895157939,
       "bounds_mm": [
         74.0,
-        33.2,
-        13.200000000000003
-      ]
+        16.0,
+        16.0
+      ],
+      "stl_bounds_mm": [
+        16.000000200000017,
+        16.004973287986942,
+        74.00497328798696
+      ],
+      "stl_path": "stl/follower_drum.stl"
+    },
+    "hw_left_follower_2x12_split_pin": {
+      "category": "hardware",
+      "in_assembly": true,
+      "volume_mm3": 30.234442003585016,
+      "bounds_mm": [
+        1.9000000000000057,
+        1.8999999999999986,
+        12.0
+      ],
+      "stl_bounds_mm": [
+        1.9005848112428814,
+        1.9005848112428785,
+        12.000584811242877
+      ],
+      "stl_path": "stl/hardware/hw_left_follower_2x12_split_pin.stl"
+    },
+    "hw_right_follower_2x12_split_pin": {
+      "category": "hardware",
+      "in_assembly": true,
+      "volume_mm3": 30.234442003585016,
+      "bounds_mm": [
+        1.9000000000000057,
+        1.8999999999999986,
+        12.0
+      ],
+      "stl_bounds_mm": [
+        1.9005848112428814,
+        1.9005848112428785,
+        12.000584811242877
+      ],
+      "stl_path": "stl/hardware/hw_right_follower_2x12_split_pin.stl"
+    },
+    "follower_shaft": {
+      "category": "printed",
+      "in_assembly": true,
+      "volume_mm3": 2999.257145885847,
+      "bounds_mm": [
+        112.0000002,
+        6.000000199999999,
+        5.500000200445221
+      ],
+      "stl_bounds_mm": [
+        112.00184740311433,
+        6.0016797993474436,
+        5.501847403114331
+      ],
+      "stl_path": "stl/follower_shaft.stl"
+    },
+    "left_follower_spacer": {
+      "category": "printed",
+      "in_assembly": true,
+      "volume_mm3": 252.66887235026627,
+      "bounds_mm": [
+        5.700000000000003,
+        10.0,
+        10.0
+      ],
+      "stl_bounds_mm": [
+        10.000000200000004,
+        10.00310837999184,
+        5.703108379991845
+      ],
+      "stl_path": "stl/left_follower_spacer.stl"
+    },
+    "hw_left_follower_M6_washer": {
+      "category": "hardware",
+      "in_assembly": true,
+      "volume_mm3": 78.88539153163971,
+      "bounds_mm": [
+        1.0,
+        12.0,
+        12.0
+      ],
+      "stl_bounds_mm": [
+        1.0037300159902092,
+        12.003730015990211,
+        12.000000200000008
+      ],
+      "stl_path": "stl/hardware/hw_left_follower_M6_washer.stl"
+    },
+    "right_follower_spacer": {
+      "category": "printed",
+      "in_assembly": true,
+      "volume_mm3": 252.66887235026633,
+      "bounds_mm": [
+        5.700000000000003,
+        10.0,
+        10.0
+      ],
+      "stl_bounds_mm": [
+        10.000000200000004,
+        10.00310837999184,
+        5.703108379991845
+      ],
+      "stl_path": "stl/right_follower_spacer.stl"
+    },
+    "hw_right_follower_M6_washer": {
+      "category": "hardware",
+      "in_assembly": true,
+      "volume_mm3": 78.88539153163971,
+      "bounds_mm": [
+        1.0,
+        12.0,
+        12.0
+      ],
+      "stl_bounds_mm": [
+        1.0037300159902092,
+        12.003730015990211,
+        12.000000200000008
+      ],
+      "stl_path": "stl/hardware/hw_right_follower_M6_washer.stl"
+    },
+    "handwheel": {
+      "category": "printed",
+      "in_assembly": true,
+      "volume_mm3": 5860.724802984653,
+      "bounds_mm": [
+        6.0,
+        36.0,
+        36.0
+      ],
+      "stl_bounds_mm": [
+        36.00000020000002,
+        36.011189647970625,
+        6.011189647970632
+      ],
+      "stl_path": "stl/handwheel.stl"
+    },
+    "wheel_spacer": {
+      "category": "printed",
+      "in_assembly": true,
+      "volume_mm3": 265.9672340529118,
+      "bounds_mm": [
+        6.0,
+        10.0,
+        10.0
+      ],
+      "stl_bounds_mm": [
+        10.000000200000004,
+        10.00310837999184,
+        6.0031083799918425
+      ],
+      "stl_path": "stl/wheel_spacer.stl"
+    },
+    "crank_sleeve": {
+      "category": "printed",
+      "in_assembly": true,
+      "volume_mm3": 144.61379303004531,
+      "bounds_mm": [
+        13.700000000000017,
+        5.0,
+        5.0
+      ],
+      "stl_bounds_mm": [
+        5.000000200000005,
+        5.001554289995923,
+        13.701554289995926
+      ],
+      "stl_path": "stl/crank_sleeve.stl"
+    },
+    "crank_grip": {
+      "category": "printed",
+      "in_assembly": true,
+      "volume_mm3": 510.73185928674644,
+      "bounds_mm": [
+        13.099999999999994,
+        9.0,
+        9.0
+      ],
+      "stl_bounds_mm": [
+        9.000000200000006,
+        9.002797561992658,
+        13.102797561992652
+      ],
+      "stl_path": "stl/crank_grip.stl"
+    },
+    "hw_crank_outer_M3_washer": {
+      "category": "hardware",
+      "in_assembly": true,
+      "volume_mm3": 20.593139844281097,
+      "bounds_mm": [
+        0.5,
+        8.0,
+        8.0
+      ],
+      "stl_bounds_mm": [
+        0.5024867439934717,
+        8.002486743993472,
+        8.000000200000002
+      ],
+      "stl_path": "stl/hardware/hw_crank_outer_M3_washer.stl"
+    },
+    "hw_crank_inner_M3_washer": {
+      "category": "hardware",
+      "in_assembly": true,
+      "volume_mm3": 20.593139844281094,
+      "bounds_mm": [
+        0.5,
+        8.0,
+        8.0
+      ],
+      "stl_bounds_mm": [
+        0.5024867439934717,
+        8.002486743993472,
+        8.000000200000002
+      ],
+      "stl_path": "stl/hardware/hw_crank_inner_M3_washer.stl"
+    },
+    "hw_crank_M3x25_bolt": {
+      "category": "hardware",
+      "in_assembly": true,
+      "volume_mm3": 247.98947009274434,
+      "bounds_mm": [
+        28.0,
+        5.5,
+        5.5
+      ],
+      "stl_bounds_mm": [
+        28.001321176496532,
+        5.501709698995512,
+        5.500000200000002
+      ],
+      "stl_path": "stl/hardware/hw_crank_M3x25_bolt.stl"
+    },
+    "hw_crank_M3_nut": {
+      "category": "hardware",
+      "in_assembly": true,
+      "volume_mm3": 45.908843985365344,
+      "bounds_mm": [
+        2.3999999999999986,
+        6.350852961085884,
+        5.5
+      ],
+      "stl_bounds_mm": [
+        2.4009326539975513,
+        6.350853161085887,
+        5.500000200000003
+      ],
+      "stl_path": "stl/hardware/hw_crank_M3_nut.stl"
+    },
+    "flexible_apron_reference": {
+      "category": "reference",
+      "in_assembly": true,
+      "volume_mm3": 3666.9578019956607,
+      "bounds_mm": [
+        73.0,
+        41.2,
+        17.200000000000003
+      ],
+      "stl_bounds_mm": [
+        73.00534626958597,
+        41.200000200000005,
+        17.205346269585974
+      ],
+      "stl_path": "stl/reference/flexible_apron_reference.stl"
+    },
+    "apron_cutting_template": {
+      "category": "reference",
+      "in_assembly": false,
+      "volume_mm3": 5272.957801995659,
+      "bounds_mm": [
+        73.0,
+        144.46459731494954,
+        0.5
+      ],
+      "stl_bounds_mm": [
+        73.00000019999999,
+        144.46459751494953,
+        0.5000001999999999
+      ],
+      "stl_path": "stl/reference/apron_cutting_template.stl"
+    },
+    "fit_coupon": {
+      "category": "printed",
+      "in_assembly": false,
+      "volume_mm3": 2447.452877685477,
+      "bounds_mm": [
+        36.0,
+        14.0,
+        6.0
+      ],
+      "stl_bounds_mm": [
+        36.00000020000003,
+        14.000000200000027,
+        6.0020748810735185
+      ],
+      "stl_path": "stl/fit_coupon.stl"
     }
   }
 }
