@@ -2,6 +2,7 @@
 import argparse
 import json
 from pathlib import Path
+from zipfile import ZipFile, ZIP_DEFLATED
 import cadquery as cq
 
 
@@ -82,6 +83,9 @@ def export(c, out):
     out = Path(out)
     out.mkdir(parents=True, exist_ok=True)
     parts = build(c)
+    stl_dir = out / 'stl'
+    stl_dir.mkdir(exist_ok=True)
+    (stl_dir / 'reference').mkdir(exist_ok=True)
     assembly = cq.Assembly(name='herbal_paper_roller')
     manifest = {'units': 'mm', 'configuration': c, 'parts': {}}
     for name, part in parts.items():
@@ -89,12 +93,25 @@ def export(c, out):
         if not shape.isValid() or len(part.solids().vals()) != 1 or shape.Volume() <= 0:
             raise RuntimeError(f'Invalid solid: {name}')
         cq.exporters.export(part, str(out / f'{name}.step'))
+        # STL is unitless: coordinates are millimetres. Place each part on Z=0.
+        # The flexible apron is a shape reference, not a rigid printable component.
+        bb = shape.BoundingBox()
+        placed = part.translate((-bb.xmin, -bb.ymin, -bb.zmin))
+        stl_path = stl_dir / ('reference' if name == 'flexible_apron' else '') / f'{name}.stl'
+        cq.exporters.export(placed, str(stl_path), tolerance=0.01, angularTolerance=0.1)
         color = (0.25, 0.55, 0.8, 0.5) if name == 'flexible_apron' else (0.7, 0.72, 0.75, 1)
         assembly.add(part, name=name, color=cq.Color(*color))
         bb = shape.BoundingBox()
         manifest['parts'][name] = {'volume_mm3': shape.Volume(), 'bounds_mm': [bb.xlen, bb.ylen, bb.zlen]}
     assembly.export(str(out / 'assembly.step'))
     (out / 'manifest.json').write_text(json.dumps(manifest, indent=2) + '\n')
+    with ZipFile(out / 'slicer_parts.zip', 'w', compression=ZIP_DEFLATED) as archive:
+        for path in sorted(stl_dir.glob('*.stl')):
+            archive.write(path, path.name)
+        archive.writestr('READ_ME.txt',
+            '16 rigid component meshes, in millimetres. Import individually; arrange and orient in your slicer.\n'
+            'Not a print-in-place assembly. The flexible apron is excluded; it needs material development.\n'
+            'Untested prototype: attachment, retention, tolerances and performance are unresolved.\n')
     return parts
 
 
@@ -104,7 +121,7 @@ def main():
     parser.add_argument('--out', default='outputs')
     args = parser.parse_args()
     parts = export(load_config(args.config), args.out)
-    print(f'Exported {len(parts)} solid parts and assembly to {args.out}')
+    print(f'Exported {len(parts)} STEP parts, individual STL meshes, slicer ZIP and STEP assembly to {args.out}')
 
 
 if __name__ == '__main__':

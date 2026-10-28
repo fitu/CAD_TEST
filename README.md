@@ -4,6 +4,16 @@ Parametric desktop roller for **non-tobacco herbal material**, modelled in milli
 
 This is an untested mechanical concept, not a production-ready product. Valid CAD solids do not establish rolling performance. A perfect roll is not demonstrated. No strength, durability, manufacturing safety, material suitability, or inhalation safety claims are made.
 
+## Open in a slicer
+
+**Use the STL files if your slicer does not support STEP.** Download `outputs/slicer_parts.zip`, extract it, and import an individual `.stl` into Cura, PrusaSlicer, OrcaSlicer, Bambu Studio or another STL-capable slicer. When downloading a single file from GitHub, use **Download raw file**; saving the GitHub preview page produces HTML rather than a mesh.
+
+The ZIP contains the 16 rigid components, each translated to non-negative coordinates with its bottom at Z=0. STL coordinates are in **millimetres**; choose mm/100% scale if asked. The base should measure **104 × 60 × 6 mm**. Orient each part and choose process-specific supports/settings yourself; resting on Z=0 is not a validated printing orientation. Import as independent objects and arrange them on the plate; do not combine them into one assembled object.
+
+The idealized flexible apron is in `outputs/stl/reference/flexible_apron.stl` for inspection only and is excluded from the slicer ZIP. It requires development as a flexible sheet. **Do not slice `assembly.step` as a print-in-place model.** Its components are in their assembled positions and are not designed with print-in-place clearances. STL conversion improves format compatibility; it does not resolve the prototype engineering limitations below.
+
+Exports use 0.01 mm tessellation tolerance and 0.1 radian angular tolerance. Automated mesh checks verify watertightness, consistent winding, a single connected component, positive volume, dimensions and placement. No slicer GUI or physical print has been tested.
+
 ## Run
 
 Python 3.12 on Linux was used for the supplied outputs. From this checkout:
@@ -24,6 +34,8 @@ In the prepared Codex environment the interpreter is `/workspace/cadquery-venv/b
 - `src/herbal_roller/generate.py`: model construction, configuration validation, STEP export, and manifest generation.
 - `config/sample.json`: sample dimensions. All values are millimetres. Unknown keys, non-positive values and unsupported geometric combinations are rejected.
 - `outputs/*.step`: one solid per part file, and a named, coloured 17-part `assembly.step` in the closed reference position. Parts retain assembly coordinates; they are not individually moved to the origin.
+- `outputs/stl/`: individual slicer-compatible STL meshes; the apron is under `reference/`.
+- `outputs/slicer_parts.zip`: the 16 rigid STL components and import instructions.
 - `outputs/manifest.json`: actual part bounding dimensions and volumes, together with the generating configuration.
 - `tests/test_models.py`: validity, dimensions, apron section volume and drum clearance, invalid input rejection, alternate configuration, and STEP re-import tests.
 

@@ -68,3 +68,26 @@ def test_rejects_overlapping_rollers(tmp_path, config):
 def test_alternative_configuration(config):
     alternate = dict(config, working_width=90, roller_radius=7, roller_spacing=24, axis_height=26)
     assert all(p.val().isValid() for p in build(alternate).values())
+
+
+def test_stl_meshes_and_slicer_bundle(tmp_path, config):
+    import trimesh
+    from zipfile import ZipFile
+
+    parts = export(config, tmp_path)
+    mesh_paths = list((tmp_path / 'stl').rglob('*.stl'))
+    assert len(mesh_paths) == len(parts)
+    for path in mesh_paths:
+        mesh = trimesh.load_mesh(path)
+        assert mesh.is_watertight, path.name
+        assert mesh.is_winding_consistent, path.name
+        assert mesh.is_volume, path.name
+        assert len(mesh.split(only_watertight=False)) == 1, path.name
+        bb = parts[path.stem].val().BoundingBox()
+        assert mesh.extents == pytest.approx([bb.xlen, bb.ylen, bb.zlen], abs=0.03)
+        assert mesh.bounds[0] == pytest.approx([0, 0, 0], abs=0.03)
+        assert mesh.volume == pytest.approx(parts[path.stem].val().Volume(), rel=0.005)
+    with ZipFile(tmp_path / 'slicer_parts.zip') as archive:
+        assert archive.testzip() is None
+        assert len([n for n in archive.namelist() if n.endswith('.stl')]) == 16
+        assert not any('apron' in n for n in archive.namelist())
